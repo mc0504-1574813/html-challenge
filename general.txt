@@ -1,0 +1,110 @@
+### 1.1
+
+```
+addTwo[a number] number {
+    var outputVal number = a + 2
+    output[outputVal]
+}
+
+start[] {
+    >> addTwo[3]
+    >> "I like React"
+    >> addTwo[5]
+}
+```
+
+What does this print out when it has finished? Your answer 
+should look exactly like the expected console output. Enter 
+your solution in the code block
+
+```
+5
+“I like React”
+7
+
+```
+
+### 1.2
+
+```
+const strings Strings = lib[strings]
+
+doAnotherThing[a number] string {
+    var outputValue string = strings^NumToString[a]
+    outputValue = strings^Concatenate[outputValue, " people"]
+    output[outputValue]
+}
+
+doSomething[a number, b func] {
+    var passNumber number = a + 1
+    var outputValue string = b[passNumber]
+    output[outputValue]
+}
+
+start[] {
+    >> doSomething[3, doAnotherThing]
+}
+```
+
+What does this print out when it has finished?
+
+```
+4 people
+
+```
+
+### 1.3
+
+```
+const htmlDOM HtmlDOM = lib[htmlDOM]
+
+start[] {
+    var body HtmlDOM^BodyEl = htmlDOM^GetTagInDOM["body"]
+    var div HtmlDOM^DivEl = htmlDOM^Create["div"]
+    div^SetStyle["background-color", "red"]
+    div^SetClass["test"]
+    div^SetID["igem"]
+    div^SetInnerText["this is text"]
+    htmlDOM^InsertIn[body, div]
+}
+```
+
+Complete the HTML without using `<style>` tags
+```
+<body>
+	<div style=“background-color: red” class=“test” id=“igem”>this is text</div>
+</body>
+```
+
+### 1.4
+
+Write code using this made up syntax (as best as you can) to
+create a `<div>` with class `container`, with two `<div>` 
+elements inside it each with a class `inner`. One of those 
+`inner` `<div>` elements should have just the text `A` inside 
+it, and one should have `B` inside it. Rather than repeat code, 
+try to create a reusable function. Once you have created this `div`,
+enter it into the `body` tag.
+
+I've started it off for you.
+
+```
+const htmlDOM HtmlDOM = lib[htmlDOM]
+
+customDivEl[insideString string] HtmlDOM^DivEl {
+	var div HtmlDOM^DivEl = htmlDOM^Create["div"]
+	div^SetClass[“inner]
+	div^SetInnerText[insideString]
+    	output[ div ]
+}
+
+start[] {
+	var body HtmlDOM^BodyEl = htmlDOM^GetTagInDOM["body"]
+	var div HtmlDOM^DivEl = htmlDOM^Create["div"]
+	div^SetClass[“container]
+	htmlDOM^Insertln[div, customDivEl[“A”]];
+	htmlDOM^Insertln[div, customDivEl[“B”]];
+	htmlDOM^Insertln[body, div];
+}
+
+```
